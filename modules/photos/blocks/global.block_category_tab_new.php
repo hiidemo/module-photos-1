@@ -146,13 +146,13 @@ if( !nv_function_exists( 'nv_block_category_tab_new' ) )
 					$row['file'] = NV_BASE_SITEURL . NV_UPLOADS_DIR . '/' . $site_mods[$module]['module_upload'] . '/images/' . $row['file'];
 					$row['link'] = $module_photo_category[$photo_category['category_id']]['link'] . '/' . $row['alias'] . '-' . $row['album_id'] . $global_config['rewrite_exturl'];
 					$albums[$row['album_id']] = $row;
+					
+					$array_data[$photo_category['category_id']][$row['album_id']] = array(
+						'name' => $photo_category['name'],
+						'alias' => $photo_category['alias'],
+						'albums' => $albums
+					);
 				}
-
-				$array_data[$photo_category['category_id']][$row['album_id']] = array(
-					'name' => $photo_category['name'],
-					'alias' => $photo_category['alias'],
-					'albums' => $albums
-				);
 			}
 		}
 
